@@ -5,13 +5,13 @@ export default function Button({ label, theme, onPress }) {
   if (theme === "primary") {
     return (
       <View
-        style={[styles.buttonContainer, { borderWidth: 4, borderColor: "#ffd33d", borderRadius: 18 }]}
+        style={[styles.buttonContainer, { borderWidth: 4, borderColor: "#00b3b0", borderRadius: 18 }]}
       >
         <Pressable style={styles.button} onPress={onPress} >
           <FontAwesome
             name="picture-o"
             size={18}
-            color="#25292e"
+            color="#fff"
             style={styles.buttonIcon}
           />
           <Text style={[styles.buttonLabel, { color: "#25292e" }]}>{label}</Text>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     paddingRight: 8,
   },
   buttonLabel: {
-    color: '#fff',
+    color: '#25292e',
     fontSize: 16,
   },
 });
