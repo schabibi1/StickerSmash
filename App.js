@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Image, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 
 import Button from './components/Button';
@@ -11,26 +11,9 @@ import EmojiPicker from "./components/EmojiPicker";
 import EmojiList from './components/EmojiList';
 import EmojiSticker from './components/EmojiSticker';
 
-// import storyblok from "./utilities/storyblok";
-// import useStoryblok from "./utilities/storyblok-hook";
-// import Editable from "./utilities/editable";
-
 const PlaceholderImage = require('./assets/images/default-image.jpg');
 
 export default function App() {
-  // const [story, setStory] = useState({});
-  // useStoryblok(story, setStory);
-
-  // useEffect(() => {
-  //   const fetchPost = async () => {
-  //     const resp = await storyblok.get("cdn/stories/home", {
-  //       version: "draft",
-  //     });
-  //     setStory(resp.data.story);
-  //   };
-  //   fetchPost();
-  // }, []);
-
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [showAppOptions, setShowAppOptions] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -63,15 +46,12 @@ export default function App() {
   };
 
   const onSaveImageAsync = async () => {
-    // we will implement this later
+    // implement this later
   };
 
   return (
-    // return story.content ? (
     <View style={styles.container}>
-      {/* <Editable text={story.content.body[0]._editable} /> */}
       <View style={styles.imageContainer}>
-        {/* <Text style={styles.header}>{story.content.body[0].headline}</Text> */}
         <ImageViewer
           placeholderImageSource={PlaceholderImage}
           selectedImage={selectedImage}
@@ -100,17 +80,10 @@ export default function App() {
       <StatusBar style="auto" />
     </View>
   )
-  // ) : (
-  //   <View>
-  //     <Text>Loading..</Text>
-  //   </View>
-  // );
 }
 
 const styles = StyleSheet.create({
-  // header: {
-  //   color: 'white',
-  // },
+
   footerContainer: {
     flex: 1 / 3,
     alignItems: 'center',
